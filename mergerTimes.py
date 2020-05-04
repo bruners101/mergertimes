@@ -1,4 +1,7 @@
 import matplotlib.pyplot as plt
+times = []
+seperations = []
+r0 = 0
 
 def f(t,r0):
   m = 1.4 * 2e30
@@ -7,10 +10,6 @@ def f(t,r0):
   r = r0**4 - (512 * G**3  * m**3)/(5 * c**5)*t
   return r
 
-times = []
-seperations = []
-
-r0 = 0
 while True:
   t = 0
   seperations.append(r0)
@@ -19,11 +18,10 @@ while True:
     if r <= 0:
       times.append(t)
       break
-    t+=r0/10**3
+    t+=r0/10**2
   r0 += 10**4
-  if r0 > 10**8:
+  if r0 > 10**7:
     break
-  print(r0)
 
 plt.plot(times,seperations)
 plt.xlabel("Time/s")
