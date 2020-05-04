@@ -19,10 +19,11 @@ while True:
     if r <= 0:
       times.append(t)
       break
-    t+=1
+    t+=r0/10**3
   r0 += 10**4
-  if r0 > 10**6:
+  if r0 > 10**8:
     break
+  print(r0)
 
 plt.plot(times,seperations)
 plt.xlabel("Time/s")
